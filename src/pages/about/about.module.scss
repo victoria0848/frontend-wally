@@ -1,0 +1,28 @@
+.aboutPage {
+  padding: 2rem 0;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Tekst venstre */
+.text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #333;
+
+  p {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Billede højre */
+.image {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}

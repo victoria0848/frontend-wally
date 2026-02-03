@@ -1,0 +1,9 @@
+@use '../../styles/globals' as globals;
+
+/* src/components/title/title.module.scss */
+.titleStyle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}

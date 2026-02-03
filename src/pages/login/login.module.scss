@@ -1,0 +1,32 @@
+@use '../../styles/globals' as globals;
+
+.loginSection {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  color: globals.$color-bcc_brown;
+  margin-bottom: 1rem;
+}
+
+.welcome {
+  color: globals.$color-bcc_brown;
+  font-weight: bold;
+}
+
+.error {
+  color: red;
+  font-weight: 500;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}

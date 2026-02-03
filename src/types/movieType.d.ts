@@ -1,0 +1,22 @@
+export interface MovieData {
+  id: number
+  name: string
+  description: string
+  image: string
+  price: number
+  genres: Genre[]
+  slug: string
+}
+
+export interface Genre {
+  id: number
+  title: string
+  slug: string
+  poster_genre_rel: PosterGenreRel
+}
+
+export interface PosterGenreRel {
+  id: number
+  poster_id: number
+  genre_id: number
+}

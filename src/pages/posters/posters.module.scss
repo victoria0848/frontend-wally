@@ -1,0 +1,45 @@
+.pageHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.pageHeader h3 {
+  margin: 0;
+}
+
+.genreList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.genreList li {
+  cursor: pointer;
+  font-size: 1rem;
+  color: #333;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.genreList li:hover {
+  color: white;
+  background-color: #d2691e;
+}
+
+.selectedGenre {
+  font-weight: bold;
+  color: white;
+  background-color: #d2691e;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}

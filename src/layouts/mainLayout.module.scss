@@ -1,0 +1,12 @@
+@use '../styles/globals' as globals;
+
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  gap: 8px;
+  background-color: globals.$color-bcc_white;
+  max-width: 1366px;
+  margin: auto;
+  padding: 0 10vw 0 10vw;
+}

@@ -1,0 +1,33 @@
+@use '../../styles/globals' as globals;
+
+.button {
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 6px;
+
+  border: 2px solid globals.$color-bcc_brown;
+  background-color: globals.$color-light_brown;
+  color: globals.$color-bcc_brown;
+
+    cursor: pointer;
+    transition:background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.button:hover {
+  border: 2px solid globals.$color-light_brown;
+  background-color: globals.$color-bcc_brown;
+  color: globals.$color-light_brown;
+  transform: translateY(-1px);
+}
+
+// .button:active {
+//   transform: translateY(0);
+// }
+
+// .button:disabled {
+//   opacity: 0.5;
+//   cursor: not-allowed;
+// }

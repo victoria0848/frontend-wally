@@ -1,0 +1,22 @@
+/* Dropdown.module.scss */
+
+.select {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.select:hover {
+  border-color: #d2691e;
+}
+
+.select:focus {
+  outline: none;
+  border-color: #d2691e;
+  box-shadow: 0 0 0 2px rgba(210, 105, 30, 0.2);
+}
