@@ -1,26 +1,80 @@
+@use '../../styles/globals' as globals;
+
+/* ===== FÆLLES ===== */
 .poster {
-  background: white;
+  background-color: globals.$color-bcc_white;
+  border: 1px solid globals.$color-gray;
   border-radius: 8px;
   padding: 10px;
 }
 
+/* ===== HOME VARIANT ===== */
 .home {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 160px 1fr;
   gap: 16px;
 }
 
+.home img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.home .content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.home h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: globals.$color-bcc_brown;
+}
+
+/* max 2 linjer tekst */
+.home .description {
+  font-size: 0.95rem;
+  color: globals.$color-black;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.home .genres {
+  font-size: 0.85rem;
+  color: globals.$color-light_brown;
+}
+
+.home .buttonWrapper {
+  margin-top: auto;
+}
+
+/* ===== POSTERS / GRID VARIANT ===== */
 .grid {
   display: flex;
   flex-direction: column;
 }
 
 .grid img {
+  width: 100%;
+  border-radius: 4px;
   margin-bottom: 8px;
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+.grid h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: globals.$color-bcc_brown;
+}
+
+.grid .price {
+  font-size: 0.95rem;
+  color: globals.$color-black;
+  margin-bottom: 6px;
+}
+
+.grid .buttonWrapper {
+  margin-top: auto;
 }

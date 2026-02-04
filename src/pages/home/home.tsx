@@ -28,12 +28,13 @@ export function Home() {
           data.map((item) => {
             return (
               <Poster
-                key={item.id}
-                genres={item.genres}
-                title={item.name}
-                imageUrl={item.image}
-                description={item.description}
-                id={item.id}
+              key={item.id}
+              id={item.id}
+              title={item.name}
+              imageUrl={item.image}
+              description={item.description}
+              genres={item.genres}
+              variant="home"
               />
             )
           })}

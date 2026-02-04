@@ -11,15 +11,22 @@ interface NavbarProps {
 export function Navbar(props: NavbarProps) {
   const { logoNav, linksNav } = props
 
-  const { userData} = useContext(AuthContext)
+   const authContext = useContext(AuthContext)
 
+  if (!authContext) {
+    throw new Error('AuthContext not found')
+  }
+
+  const { userData, logout } = authContext
   return (
     <nav className={style.navbarStyle}>
       <h3>{logoNav}</h3>
       <ul>
         {linksNav.map((item) => {
           return item.name === 'login' && userData ? (
-            <li onClick={logout}>LOGOUT</li>
+            <li key="logout" onClick={logout}>
+              LOGOUT
+            </li>
           ) : (
             <li key={item.path}>
               <NavLink to={item.path}>{item.name.toUpperCase()}</NavLink>

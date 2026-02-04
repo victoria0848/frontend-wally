@@ -1,3 +1,7 @@
+@use '../../styles/globals' as globals;
+
+/* ---------- HEADER ---------- */
+
 .pageHeader {
   display: flex;
   align-items: center;
@@ -7,39 +11,66 @@
 
 .pageHeader h3 {
   margin: 0;
+  color: globals.$color-bcc_brown;
 }
 
+.layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.genreSidebar {
+  background-color: globals.$color-beige;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.posterArea {
+  width: 100%;
+}
 .genreList {
   list-style: none;
   padding: 0;
   margin: 0;
+
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.4rem;
 }
 
 .genreList li {
   cursor: pointer;
-  font-size: 1rem;
-  color: #333;
-  padding: 0.3rem 0.6rem;
-  border-radius: 4px;
-  transition: color 0.2s, background-color 0.2s;
+  font-size: 0.95rem;
+  color: globals.$color-bcc_brown;
+
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .genreList li:hover {
-  color: white;
-  background-color: #d2691e;
+  background-color: globals.$color-light_brown;
+  color: globals.$color-bcc_white;
 }
 
 .selectedGenre {
-  font-weight: bold;
-  color: white;
-  background-color: #d2691e;
+  background-color: globals.$color-bcc_brown;
+  color: globals.$color-bcc_white;
+  font-weight: 600;
 }
 
-.gridContainer {
+.posterGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
+}
+
+/* Gør plakater mindre og pænere */
+.posterGrid :global(.poster) {
+  max-width: 100%;
 }

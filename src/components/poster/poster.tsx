@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router'
 import type { Genre } from '../../types/movieType'
 import styles from './poster.module.scss'
 import { Button } from '../button/button'
@@ -6,34 +7,55 @@ interface PosterProps {
   id: number
   imageUrl: string
   title: string
+  genres: Array<Genre>
   description?: string
   price?: number
-  genres?: Genre[]
+  slug?: string
 
   variant?: 'home' | 'grid'
 }
 
-export function Poster({ id, imageUrl, title, genres, price }: PosterProps) {
+export function Poster({
+  imageUrl,
+  title,
+  description,
+  genres,
+  price,
+  slug,
+  variant = 'grid',
+}: PosterProps) {
   return (
-    <div key={id} className={styles.posterStyle}>
-      {/* Billede til venstre */}
-      <img src={imageUrl} alt={title} className={styles.posterImage} />
+    <div
+      className={`${styles.poster} ${
+        variant === 'home' ? styles.home : styles.grid
+      }`}
+    >
+      <img src={imageUrl} alt={title} />
 
-      {/* Tekst + info */}
-      <div className={styles.posterContent}>
+      <div className={styles.content}>
         <h4>{title}</h4>
 
-        <div className={styles.genres}>
-          {genres.map((genre) => (
-            <span key={genre.id}>{genre.title}</span>
-          ))}
-          {price && <p>Pris: {price} kr.</p>}
-        </div>
+        {variant === 'home' && description && (
+          <p className={styles.description}>{description}</p>
+        )}
 
-        {/* Knap */}
-        <div className={styles.buttonWrapper}>
-          <Button text="Læs mere" onClick={() => console.log('Poster id:', id)} />
-        </div>
+        {variant === 'home' && (
+          <div className={styles.genres}>
+            {genres.map((g) => (
+              <span key={g.id}>{g.title} </span>
+            ))}
+          </div>
+        )}
+
+        {variant === 'grid' && price && (
+          <p className={styles.price}>{price} kr.</p>
+        )}
+
+        {slug && (
+  <NavLink to={`/details/${slug}`} className={styles.link}>
+    <Button text="Læs mere" />
+  </NavLink>
+)}
       </div>
     </div>
   )

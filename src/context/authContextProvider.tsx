@@ -14,15 +14,25 @@ interface UserData {
 interface AuthContextProps {
   userData: UserData | null
   setUserData: React.Dispatch<React.SetStateAction<UserData | null>>
+  logout: () => void
 }
 
-export const AuthContext = createContext<AuthContextProps | null>(null)
+export const AuthContext = createContext<AuthContextProps | undefined>(undefined)
 
-export function AuthContextProvider({ children }: { children: ReactNode }) {
-  const [userData, setUserData] = useState<UserData | null>(null)
+interface AuthProviderProps {
+  children: ReactNode
+}
+
+export function AuthProvider({ children }: AuthProviderProps) {
+  const [userData, setUserData] = useState<{ user: User } | null>(null)
+
+  const logout = () => {
+    setUserData(null)
+    console.log('User logged out')
+  }
 
   return (
-    <AuthContext.Provider value={{ userData, setUserData }}>
+    <AuthContext.Provider value={{ userData, setUserData, logout }}>
       {children}
     </AuthContext.Provider>
   )
